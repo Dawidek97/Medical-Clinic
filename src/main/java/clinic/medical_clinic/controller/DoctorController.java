@@ -1,22 +1,26 @@
 package clinic.medical_clinic.controller;
 
+import clinic.medical_clinic.model.Doctor;
 import clinic.medical_clinic.repository.DoctorRepository;
+import clinic.medical_clinic.service.ServiceDoctor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class DoctorController {
 
    private DoctorRepository doctorRepository;
-    public DoctorController(DoctorRepository doctorRepository) {
+   private ServiceDoctor serviceDoctor;
+
+    public DoctorController(DoctorRepository doctorRepository, ServiceDoctor serviceDoctor) {
         this.doctorRepository = doctorRepository;
+        this.serviceDoctor = serviceDoctor;
     }
 
-
-    @GetMapping("/")
-    public String allDoctors(ModelMap modelMap) {
-        modelMap.put("doctors", doctorRepository.findAll());
-        return "home";
+    @GetMapping("/doctors")
+    public List<Doctor> getAllDoctor() {
+        return serviceDoctor.getDoctorList();
     }
 }
