@@ -3,7 +3,6 @@ package clinic.medical_clinic.controller;
 import clinic.medical_clinic.model.Doctor;
 import clinic.medical_clinic.repository.DoctorRepository;
 import clinic.medical_clinic.service.ServiceDoctor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -13,7 +13,6 @@ public class PatientMapper implements Mapper<PatientDto, Patient>{
                 .surName(from.getSurName())
                 .pesel(from.getPesel())
                 .age(from.getAge())
-                //todo - doctors
                 .build();
     }
 }
