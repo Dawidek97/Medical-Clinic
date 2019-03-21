@@ -5,14 +5,15 @@ import clinic.medical_clinic.repository.DoctorRepository;
 import clinic.medical_clinic.service.ServiceDoctor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class DoctorController {
 
-   private DoctorRepository doctorRepository;
-   private ServiceDoctor serviceDoctor;
+    private DoctorRepository doctorRepository;
+    private ServiceDoctor serviceDoctor;
 
     public DoctorController(DoctorRepository doctorRepository, ServiceDoctor serviceDoctor) {
         this.doctorRepository = doctorRepository;

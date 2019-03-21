@@ -1,5 +1,6 @@
 package clinic.medical_clinic.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,9 @@ public class Specjalisation {
     @Column(name = "Name_Specjalisation")
     private String title;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "specjalisation", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, optional = false)
+            fetch = FetchType.LAZY)
     private Doctor doctor;
 
 }

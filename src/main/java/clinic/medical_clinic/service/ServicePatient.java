@@ -26,7 +26,7 @@ public class ServicePatient {
         return patientRepository.save(patient);
     }
 
-    public void deletePatient(String patientName){
-        patientRepository.deletePatientByName(patientName);
+    public void deletePatient(String patientName, String surname) {
+        patientRepository.deletePatientByNameAAndSurName(patientName, surname);
     }
 }
