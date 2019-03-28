@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class PatientController {
+public class PatientRestController {
 
     private PatientRepository patientRepository;
     private ServicePatient servicePatient;
     private ServiceDoctor serviceDoctor;
 
-    public PatientController(PatientRepository patientRepository, ServicePatient servicePatient, ServiceDoctor serviceDoctor) {
+    public PatientRestController(PatientRepository patientRepository, ServicePatient servicePatient, ServiceDoctor serviceDoctor) {
         this.patientRepository = patientRepository;
         this.servicePatient = servicePatient;
         this.serviceDoctor = serviceDoctor;
@@ -33,7 +33,7 @@ public class PatientController {
            if(d.getSpecjalisation().getTitle().equals(patientDto.getSpecialisation())) {
 
                newPatient = Patient.builder()
-                       .name(patientDto.getSurName())
+                       .name(patientDto.getName())
                        .age(patientDto.getAge())
                        .pesel(patientDto.getPesel())
                        .surName(patientDto.getSurName())

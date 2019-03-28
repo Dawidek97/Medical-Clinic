@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
 
-    private PatientController patientController;
+    private PatientRestController patientRestController;
 
-    public HomeController(PatientController patientController) {
-        this.patientController = patientController;
+    public HomeController(PatientRestController patientRestController) {
+        this.patientRestController = patientRestController;
     }
 
     @GetMapping("/")
@@ -30,7 +30,7 @@ public class HomeController {
 
     @PostMapping("/add")
     public String add(@ModelAttribute PatientDto patientDto) {
-        patientController.addPatient(patientDto);
+        patientRestController.addPatient(patientDto);
         return "redirect:/";
     }
 

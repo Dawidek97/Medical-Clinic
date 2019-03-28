@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class DoctorController {
+public class DoctorRestController {
 
     private DoctorRepository doctorRepository;
     private ServiceDoctor serviceDoctor;
 
-    public DoctorController(DoctorRepository doctorRepository, ServiceDoctor serviceDoctor) {
+    public DoctorRestController(DoctorRepository doctorRepository, ServiceDoctor serviceDoctor) {
         this.doctorRepository = doctorRepository;
         this.serviceDoctor = serviceDoctor;
     }

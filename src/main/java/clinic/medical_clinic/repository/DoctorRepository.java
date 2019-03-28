@@ -11,6 +11,4 @@ public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
     @Query("select d from Doctor d where d.name = ?1")
     Optional<Doctor> findByName(String name);
 
-
-
 }
