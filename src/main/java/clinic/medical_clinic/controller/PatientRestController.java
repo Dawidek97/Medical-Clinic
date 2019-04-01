@@ -47,12 +47,12 @@ public class PatientRestController {
 
     }
 
-    @PostMapping("/patient/{patientName}")
-    public void deletePatient(@PathVariable String patientName, String surname) {
+    @PostMapping("/patient/{patientName}{surname}")
+    public void deletePatient(@PathVariable String patientName, @PathVariable String surname) {
         servicePatient.deletePatient(patientName, surname);
     }
 
-    @GetMapping("/patient")
+    @GetMapping("/patientList")
     public List<Patient> getAllPatient() {
         return servicePatient.getPatientList();
     }

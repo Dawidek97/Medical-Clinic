@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
 </head>
 <body>
+
+
 <p align="center"> Please enter you're details</p>
 <form th:action="@{/add}" th:object="${patient}" method="post" action="/add" align="center" >
     <div class="form-row">
@@ -43,6 +46,25 @@
         <div class="col-sm-12 text-right form-group">
             <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus-square"
                                                                     aria-hidden="true"></i> Create
+            </button>
+        </div>
+    </div>
+
+</form>
+<form th:action="@{/delete}" th:object="${patient}" method="post" action="/delete" align="center" >
+    <div class="form-row">
+        <div class="col-sm-12 col-md-6 form-group">
+            <input type="text" name="name" placeholder=" name" class="form-control">
+        </div>
+        <div class="col-sm-12 col-md-6 form-group">
+
+            <input type="text" name="surname" placeholder="surname" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-12 text-right form-group">
+            <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus-square"
+                                                                    aria-hidden="true"></i> Delete Patient
             </button>
         </div>
     </div>
