@@ -1,0 +1,19 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="table">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <table class="table table-dark">
+                <tr class="active">
+                    <th>Specialisation List From The Data Base</th>
+
+                </tr>
+                <tr th:each="s : ${specjalisation}">
+                    <td th:text="${s.getTitle()}"></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,10 +1,7 @@
 package clinic.medical_clinic.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "Specjalisation")
 public class Specjalisation {
 
@@ -28,4 +26,7 @@ public class Specjalisation {
             fetch = FetchType.LAZY)
     private Doctor doctor;
 
+//    public String getTitle() {
+//        return title;
+//    }
 }

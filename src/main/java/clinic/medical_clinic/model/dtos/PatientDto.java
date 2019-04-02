@@ -14,4 +14,5 @@ public class PatientDto {
     private int age;
     private int pesel;
     private String specialisation;
+
 }

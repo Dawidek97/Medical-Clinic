@@ -15,4 +15,14 @@ public class PatientMapper implements Mapper<PatientDto, Patient>{
                 .age(from.getAge())
                 .build();
     }
+
+    @Override
+    public PatientDto reverseMap(Patient to) {
+        return PatientDto.builder()
+                .name(to.getName())
+                .surName(to.getSurName())
+                .pesel(to.getPesel())
+                .age(to.getAge())
+                .build();
+    }
 }
